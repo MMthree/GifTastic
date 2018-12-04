@@ -1,0 +1,23 @@
+body {
+    /* background-color: black; */
+}
+.jumbotron {
+    width: 90%;
+    /* background-color: black; */
+    color: white;
+}
+
+.search-input {
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #5912b6;
+    border-radius: 0;
+    border: none;
+}
