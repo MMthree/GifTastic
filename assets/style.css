@@ -1,9 +1,10 @@
 body {
-    /* background-color: black; */
+    background-color: black;
 }
 .jumbotron {
     width: 90%;
-    /* background-color: black; */
+    background-color: black;
+    /* background-color: lightseagreen; */
     color: white;
 }
 
@@ -20,4 +21,31 @@ body {
     background-color: #5912b6;
     border-radius: 0;
     border: none;
+}
+
+img {
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+button {
+    padding: 10px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#gif-btn {
+    margin-top: 10px;
+}
+
+.rating {
+    display: inline-block;
+    margin-right: 10px;
+    color: white;
+    text-align: center;
+}
+
+.card-body {
+    padding: 0px;
 }

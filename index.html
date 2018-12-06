@@ -21,23 +21,31 @@
 
       <!-- Jumbotron header with search box and search button -->
       <h1 class="display-3">GifTastic Giphy Searcher</h1>
-      <input type="text" class="search-input" id="search" placeholder="Search...">
+      <input type="text" class="search-input" id="text-search" placeholder="Search...">
       <p class="lead">
-        <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Search</a>
+        <a class="btn btn-primary btn-lg" data-name="bird" id="search" role="button">Search</a>
       </p>
 
       <!-- Div for the gif buttons -->
-      <div class="card-body button-primary" id="new-btns">
+      <div id="test"></div>
+      <div class="card-body" id="new-btns">
+        <!-- <button class="btn-primary" id="guitar">Guitar</button>
+        <button class="btn-primary" id="80s">80s</button>
+        <button class="btn-primary" id="cat">Cat</button>
+        <button class="btn-primary" id="dog">Dog</button>
+        <button class="btn-primary" id="bird">Bird</button> -->
       
       </div>
 
       <!-- Div for the gifs -->
-      <div class="card-body" id="gifs">
+ 
+
+    </div>
+
+     <div class="card-body gifs text-center" id="gifs">
         
 
       </div>
-
-    </div>
 
   </div>
 
@@ -51,6 +59,7 @@
   <!-- jQuery + AJAX + my JS-->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.jss"></script> -->
   <script src="javascript/app.js"></script>
 
