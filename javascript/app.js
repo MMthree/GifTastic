@@ -7,8 +7,6 @@ $(document).ready(function () {
     var btn = $("<button>");
     var div = $("<div>");
     var gifs = ["guitar", "80s", "cat", "dog", "bird"];
-    var searchData = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchData + "&api_key=FSyytIrzomRaLQisiLmXTgTFkxeIi72a&limit=10";
     console.log(gifs);
 
 
@@ -20,7 +18,7 @@ $(document).ready(function () {
         for (var i = 0; i < gifs.length; i++) {
 
             var starters = $("<button>")
-            starters.addClass("btn-primary btn");
+            starters.addClass("btn-primary btn gif");
             starters.attr("id", "gif-btn");
             starters.attr("data-name", gifs[i]);
             starters.text(gifs[i]);
@@ -32,9 +30,9 @@ $(document).ready(function () {
 
 
     // Displays the gifs and gif rating on button click with ajax request
-    $(".btn").on("click", function () {
+    $(".gif").on("click", function () {
         var searchData = $(this).attr("data-name");
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchData + "&api_key=FSyytIrzomRaLQisiLmXTgTFkxeIi72a&limit=10";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchData + "&api_key=FSyytIrzomRaLQisiLmXTgTFkxeIi72a&limit=3";
 
 
 
@@ -44,11 +42,13 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
+            
 
             var results = response.data;
 
             for (var i = 0; i < results.length; i++) {
-                var rating = $("<p>").text("Rated: " + results[i].rating.toUpperCase());
+                var rating = $("<p>");
+                rating.text("Rated: " + results[i].rating.toUpperCase() + " |  Title: " + results[i].title);
                 rating.addClass("rating");
                 var img = $("<img>").attr("src", results[i].images.fixed_width.url);
                 div.append(rating, img);
@@ -61,24 +61,24 @@ $(document).ready(function () {
     }
 
     
-    // stores the search terms into the gifs array then adds a new button for the search
+    // stores the search terms into the gifs array then adds a new button for the search + displays more gifs
     $("#search").on("click", function () {
         var textSearch = $("#text-search").val().trim();
         gifs.push(textSearch)
 
-        textSearch = searchData;
-
-
+        
+        var searched = "https://api.giphy.com/v1/gifs/search?q=" + textSearch + "&api_key=FSyytIrzomRaLQisiLmXTgTFkxeIi72a&limit=3";
 
         $.ajax({
-            url: queryURL,
+            url: searched,
             method: "GET"
         }).then(function (response) {
 
             var results = response.data;
 
             for (var i = 0; i < results.length; i++) {
-                var rating = $("<p>").text("Rated: " + results[i].rating.toUpperCase());
+                var rating = $("<p>");
+                rating.text("Rated: " + results[i].rating.toUpperCase() + " |  Title: " + results[i].title);
                 rating.addClass("rating");
                 var img = $("<img>").attr("src", results[i].images.fixed_width.url);
                 div.append(rating, img);
