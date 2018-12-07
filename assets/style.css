@@ -43,9 +43,12 @@ button {
     display: inline-block;
     margin-right: 10px;
     color: white;
-    text-align: center;
 }
 
 .card-body {
     padding: 0px;
+}
+
+img {
+    display: inline-block;
 }
