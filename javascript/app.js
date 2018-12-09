@@ -46,13 +46,24 @@ $(document).ready(function () {
 
             var results = response.data;
 
+
+            // Switched the way gifs displayed to a table
+            // (after doing that in the saturday firebase class)
+            // This also helps with responsiveness 
+
             for (var i = 0; i < results.length; i++) {
-                var rating = $("<p>");
-                rating.text("Rated: " + results[i].rating.toUpperCase() + " |  Title: " + results[i].title);
-                rating.addClass("rating");
+                // var rating = $("<p>");
+                // rating.text("Rated: " + results[i].rating.toUpperCase() + " |  Title: " + results[i].title);
+                // rating.addClass("rating");
                 var img = $("<img>").attr("src", results[i].images.fixed_width.url);
-                div.append(rating, img);
-                $("#gifs").append(div);
+                // div.append(rating, img);
+                // $("#gifs").append(div);
+
+                var tr = $("<tr>")
+                tr.append("<td>" + results[i].rating.toUpperCase() + "</td>");
+                tr.append("<td>" + results[i].title + "</td>",);
+                tr.append(img);
+                $("#gif-append").append(tr);
             }
             
 
@@ -77,12 +88,18 @@ $(document).ready(function () {
             var results = response.data;
 
             for (var i = 0; i < results.length; i++) {
-                var rating = $("<p>");
-                rating.text("Rated: " + results[i].rating.toUpperCase() + " |  Title: " + results[i].title);
-                rating.addClass("rating");
+                // var rating = $("<p>");
+                // rating.text("Rated: " + results[i].rating.toUpperCase() + " |  Title: " + results[i].title);
+                // rating.addClass("rating");
                 var img = $("<img>").attr("src", results[i].images.fixed_width.url);
-                div.append(rating, img);
-                $("#gifs").append(div);
+                // div.append(rating, img);
+                // $("#gifs").append(div);
+
+                var tr = $("<tr>")
+                tr.append("<td>" + results[i].rating.toUpperCase() + "</td>");
+                tr.append("<td>" + results[i].title + "</td>",);
+                tr.append(img);
+                $("#gif-append").append(tr);
             }
             
 
