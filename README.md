@@ -7,4 +7,4 @@
   will give you the gif rating, title, and the gif itself.
 ```
 
-### Try it out! https://mmthree.github.io/GifTastic/
+### Demo: https://mmthree.github.io/GifTastic/
